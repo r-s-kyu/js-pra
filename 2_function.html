@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello!</title>
+    <style>
+        body {
+            font-size: 16pt;
+            font-weight: plain;
+        }
+
+        h1 {
+            color: white;
+            padding: 5px;
+            font-size: 24pt;
+            background-color: red;
+        }
+
+        .No {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- 関数の定義 -->
+    <script>
+        var count =1;
+
+        function writeMsg(msg){
+            document.write('<p><span class="No">' + count++ + '. </span>' + msg +'</p>');
+        }
+
+        
+
+    </script>
+</head>
+
+<body>
+    <h1>Hello!</h1>
+    <script>
+        writeMsg('Hello!');
+        writeMsg("これは、メッセージの表示例です。");
+        writeMsg("関数を使えば、たくさんのメッセージを簡単に表示できます。");
+
+        
+
+    </script>
+</body>
+
+</html>
