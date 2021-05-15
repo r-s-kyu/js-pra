@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello!</title>
+    <style>
+        body {
+            font-size: 16pt;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: white;
+            padding: 5px;
+            font-size: 24pt;
+            background-color: red;
+        }
+
+        .gu {
+            color: red;
+        }
+
+        .choki {
+            color: blue;
+        }
+
+        .pa {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello!</h1>
+    <script>
+        var te = "パー";
+        switch (te) {
+            case "グー":
+                document.write('私は<span class="pa">バー</span>。私の勝ちです。');
+                break;
+            case "チョキ":
+                document.write('私は<span class="gu">グー</span>。私の勝ちです。');
+                break;
+            case "パー":
+                document.write('私は<span class="choki">チョキ</span>。私の勝ちです。');
+                break;
+            default:
+                document.write('ちょっとよくわかりません....');
+        }
+
+        var end = 100;
+        var total = 0;
+        for (var i = 1; i <= end; i++) {
+            total += i;
+        }
+        document.write("<br>");
+        document.write(end + 'までの合計は、' + total);
+        document.write("<br>");
+
+        var data = [98, 67, 81, 59, 76]
+        var total = 0;
+        for (var i = 0; i < 5; i++) {
+            total += data[i]
+        }
+        document.write("合計は、" + total + "　　平均は、" + (total / 5));
+
+        document.write("<br>");
+
+        var data = { '国語': 98, '数学': 67, '英語': 81, '理科': 59, '社会': 76 };
+        var total = 0;
+        for (key in data) {
+            total += data[key]
+            document.write('[' + key + ':' + data[key] + ']');
+        }
+        document.write("<br><br>");
+        document.write("合計は、" + total + "　　平均は、" + (total / 5));
+
+    </script>
+</body>
+
+</html>
