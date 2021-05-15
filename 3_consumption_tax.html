@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body { font-size: 14pt ; font-weight: plain ;}
+        h1 { color :white; padding :5px; font-size: 24pt; 
+            background-color: red; }
+        .head { color: blue; font-weight: bold; }
+    </style>
+
+    <script>
+        var con_tax ={};
+        con_tax.tax = 8;
+        con_tax.price = 0;
+
+        con_tax.kingaku = function(){
+            document.write('<p><span class="head">金額：</span>' + con_tax['price'] + '円</p>');
+        }
+        con_tax.zeikomi = function(){
+            var n = con_tax['price'] * (100 +　con_tax['tax']) / 100;
+            document.write('<p><span class="head">税込み価格：</span>' + Math.floor(n) + '円</p>');
+        }
+        con_tax.zeinuki = function(){
+            var n = con_tax['price'] / ((100 +　con_tax['tax']) / 100);
+            document.write('<p><span class="head">税抜き価格：</span>' + Math.floor(n) + '円</p>');
+        }
+    </script>
+</head>
+<body>
+    <h1>Hello!</h1>
+    <script>
+        con_tax.price = 12800;
+        con_tax.kingaku();
+        con_tax.zeikomi();
+        con_tax.zeinuki();
+
+    </script>
+</body>
+</html>
