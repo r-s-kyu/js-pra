@@ -1,2 +1,2 @@
-# js-pra
+# original-js-pra
 javascriptの練習
