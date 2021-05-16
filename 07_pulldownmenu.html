@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello!</title>
+    <style>
+        body {
+            font-size: 14pt;
+            font-weight: plain;
+        }
+
+        h1 {
+            color: white;
+            padding: 5px;
+            font-size: 24pt;
+            background-color: red;
+        }
+    </style>
+    <script>
+        function clickNow(){
+            // プルダウンメニューの処理
+            var mobile = document.querySelector('#mobile');
+            var res = '<p>' + mobile.value + '</p>';
+            // 複数選択のリスト
+            var pc = document.querySelector('#pc');
+            var opts = pc.getElementsByTagName('option'); 
+            var sel_pc ='<p>';
+                for (var opt in opts){
+                    if (opts[opt].selected){
+                        sel_pc += opts[opt].value +' ';
+                    }
+                }
+                sel_pc += '</p>';
+                
+            // 日付けの処理
+            var date1 = document.querySelector('#date1');
+            var day = '<p>' + date1.value + '</p>';
+
+            // クリック後の処理
+                var msg  = document.querySelector('#msg');
+                // msg.innerHTML = res += sel_pc　+= day;
+                msg.innerHTML = res += sel_pc　+ day; //いうてこの計算でも大丈夫
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="title">Hello!</h1>
+    <p id="msg">選択してください。</p>
+    <p>
+        <select id="mobile">
+            <option>iPhone</option>
+            <option>Android</option>
+            <option>Windows</option>
+            <option>ガラケー</option>
+        </select>
+    </p>
+    <p>
+        <select id="pc" size="5" multiple>
+            <option>Windows</option>
+            <option>Mac OS</option>
+            <option>Linux</option>
+            <option>Chrome OS</option>
+            <option>Other...</option>
+        </select>
+    </p>
+    <p>
+        <input type="date" id="date1">
+    </p>
+    <button onclick="clickNow();">Click</button>
+</body>
+
+</html>
