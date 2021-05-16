@@ -1,2 +1,2 @@
 # original-js-pra
-javascriptの練習
+githubとjavascriptの練習
