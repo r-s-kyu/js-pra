@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello!</title>
+    <style>
+        body {
+            font-size: 14pt;
+            font-weight: plain;
+        }
+
+        h1 {
+            color: white;
+            padding: 5px;
+            font-size: 24pt;
+            background-color: red;
+        }
+
+        #msg3 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 50px;
+            left: 150px;
+        }
+    </style>
+
+    <script>
+        // テキストの背景と色を変える
+        function clickNow() {
+            var r = document.querySelector('#red').value;
+            var g = document.querySelector('#green').value;
+            var b = document.querySelector('#blue').value;
+            var msg = document.querySelector('#msg');
+            // msg.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+            msg.style.color = 'rgb(' + r + ',' + g + ',' + b + ')';
+        }
+        // テキストの大きさを変える
+        function clickNow1() {
+            var s = document.querySelector('#size').value;
+            var msg1 = document.querySelector('#msg1');
+            msg1.style.fontSize = s + 'pt';
+        }
+        // 領域の大きさを変える
+        function doChange() {
+            var w = document.querySelector('#w').value;
+            var h = document.querySelector('#h').value;
+            var msg2 = document.querySelector('#msg2');
+            msg2.style.height = h + 'px';
+            msg2.style.width = w + 'px';
+        }
+
+        // 四角ブロックが移動する。
+        function doChange1() {
+            var x = document.querySelector('#x').value;
+            var y = document.querySelector('#y').value;
+            var msg3 = document.querySelector('#msg3');
+            msg3.style.left = x + 'px';
+            msg3.style.top = y + 'px';
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1 id="title">Hello!</h1>
+    <p id="msg">色を変更してみよう</p>
+    <p>
+        <input type="range" onclick="clickNow();" id="red" max="255"><br>
+        <input type="range" onclick="clickNow();" id="green" max="255"><br>
+        <input type="range" onchange="clickNow();" id="blue" max="255"><br>
+    </p>
+    <!-- <button onclick="clickNow();">Click</button> -->
+    <button onclick="clickNow();">Click</button>
+
+
+
+    <p id="msg1">フォントサイズを変更してみよう</p>
+    <p>
+        <input type="range" onclick="clickNow1();" id="size" min="9" max="128">
+    </p>
+    <button onclick="clickNow1();">Click</button>
+
+
+
+    <p id="msg2" style="background-color:#ffaaaa;">
+        サイズを変更してみよう</p>
+    <p>
+        <input type="range" id="w" min="50" max="500" onchange="doChange();"><br>
+        <input type="range" id="h" min="50" max="500" onchange="doChange();"><br>
+    </p>
+
+
+    <p id="msg3" style="background-color:#ffaaaa;">
+        位置を変更してみよう</p>
+    <p>
+        <input type="range" id="x" min="10" max="1000" value="150" onchange="doChange1();"><br>
+        <input type="range" id="y" min="50" max="2500" value="50" onchange="doChange1();"><br>
+    </p>
+
+</body>
+
+</html>
